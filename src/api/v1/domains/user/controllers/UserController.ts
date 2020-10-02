@@ -5,7 +5,7 @@ let userSchema: any;
 
 class UserController {
   async connectDatabase() {
-    database = database || mongoose.connect('mongodb+srv://root:naponoceno@cluster0.7gz4h.gcp.mongodb.net/richard?retryWrites=true&w=majority', {
+    database = database || mongoose.connect('URL DO MONGO DB ATLAS', {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
@@ -46,9 +46,7 @@ class UserController {
 
     await this.createUserSchema(database);
 
-    const {
-      User
-    } = database.models;
+    const { User } = database.models;
 
     const user = new User({
       name
